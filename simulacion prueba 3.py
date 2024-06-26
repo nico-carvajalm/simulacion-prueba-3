@@ -6,17 +6,16 @@ def mostrar_menu():
 
 def registrar_pedido():
     
-    nom=input("Ingrese nombre y Apellido: ")
+    nom=input("Ingrese nombre y apellido: ")
+    dir=input("Ingrese dirección: ")
     com=input("Ingrese comuna: ")
-    c5=int(input("Ingrese cantidad de cilindros de 5kg: "))
-    c15=int(input("Ingrese cantidad de cilindros de 15kg: "))
-    c45=int(input("Ingrese cantidad de cilindros de 45kg: "))
+    c5=(input("Ingrese cantidad de cilindros de 5kg: "))
+    c15=(input("Ingrese cantidad de cilindros de 15kg: "))
+    c45=(input("Ingrese cantidad de cilindros de 45kg: "))
     L1=[nom,com,c5,c15,c45]
     L.append(L1)
 
-
     
-
 ##MAIN
 
 L=[]
@@ -26,7 +25,14 @@ while True:
     op=input("Elegir opción: ")
     if op=="1":
         registrar_pedido()
-        print(L)
+    
+    elif op=="2":
+        print("Todos los pedidos:")
+        for i in L:
+            print(i)
+    
+    
+
     elif op=="4":
         print("Saliendo del programa")
         break
