@@ -15,6 +15,17 @@ def registrar_pedido():
     L1=[nom,com,c5,c15,c45]
     L.append(L1)
 
+def imprimir_hoja(comuna):
+    Lc=[] #Lista comuna
+    for pedido in L:
+        if pedido[3]==comuna:
+            Lc.append(pedido)
+    #Escribir archivo
+    arch=open("Hoja de ruta_" + comuna + ".txt","w" )
+    for pedido in Lc:
+        s="--".join(pedido)
+        arch.write(s+"\n")
+    arch.close()
     
 ##MAIN
 
@@ -31,7 +42,9 @@ while True:
         for i in L:
             print(i)
     
-    
+    elif op=="3":
+        comuna=input(" Ingrese comuna:")
+        imprimir_hoja(comuna)
 
     elif op=="4":
         print("Saliendo del programa")
